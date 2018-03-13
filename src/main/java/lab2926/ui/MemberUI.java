@@ -2,7 +2,9 @@ package lab2926.ui;
 
 import lab2926.controller.EntryController;
 import lab2926.controller.MemberController;
+import lab2926.model.Entry;
 import lab2926.model.Member;
+import lab2926.validators.EntryValidator;
 import lab2926.validators.MemberValidator;
 
 import java.util.InputMismatchException;
@@ -124,7 +126,7 @@ public class MemberUI {
 	void addEntry() {
 		while(true) {
 			try {
-				TypeEntry type=EntryValidator.validateTypeEntry(getString("Enter type:"));
+				Entry.TypeEntry type= EntryValidator.validateTypeEntry(getString("Enter type:"));
 				int value=EntryValidator.validateBudget(getInt("Enter the value:"));
 				int id = getInt("Enter the id of the member:");
 				if(!memberController.userExists(id))
