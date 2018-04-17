@@ -191,12 +191,13 @@ public class MemberUI {
 	public void Run()
 	{
 		load();
-		
-		printMenu();
-		int cmd=getInt(">");
-		
+		int cmd;
 		while(true)
 		{
+
+			printMenu();
+			cmd=getInt(">");
+
 			if(cmd==0) {
 				if(save())
 					return;
@@ -215,8 +216,6 @@ public class MemberUI {
 				listForMember();			
 			}
 
-			printMenu();
-			cmd=getInt(">");
 		}
 		
 		
